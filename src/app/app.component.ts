@@ -11,7 +11,10 @@ export class AppComponent {
   constructor(
     private _element: ElementRef
   ){}
+  
   public toggleFullScreen() {
+    // 在Ynote中全屏时需要获得iframe的DOM元素，因为不能直接获得，（异步）
+    // 所以可以先放大body，待元素获得完全后再通过zindex去覆盖body
     let elem = this._element.nativeElement.querySelector('.demo-content');
     if(elem.requestFullScreen) {
         elem.requestFullScreen();
