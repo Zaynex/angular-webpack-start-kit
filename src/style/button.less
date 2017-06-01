@@ -1,0 +1,101 @@
+@btn-blue-normal: @blue;
+@btn-blue-hover: #337ed5;
+@btn-blue-active: #337ed5;
+@btn-gray: #f2f4f5;
+@btn-gray-hover: #f2f4f5;
+@btn-gray-active: #e0e2f8;
+@btn-gray-border: #96999c;
+@btn-disabled: #ebebeb;
+@btn-disabled-text: #989898;
+@btn-disabled-border: #dbdbdb;
+@btn-red: #ee4239;
+@btn-red-hover: #db362d;
+.btn {
+    font-size: 12px;
+    display:inline-block;
+    vertical-align: middle;
+    text-align:center;
+    margin: 0;
+    padding: 0 5px;
+    line-height: 32px;
+    color: #ffffff;
+    background: @btn-blue-normal;
+    border-radius: 2px;
+    border: 1px solid @btn-blue-normal;
+    cursor: pointer;
+    outline: none;
+    &:hover {
+        background: @btn-blue-hover;
+        border: 1px solid @btn-blue-hover;
+    }
+    &:active {
+        background: @btn-blue-active;
+        border: 1px solid @btn-blue-active;
+    }
+    &:disabled,&[disabled] {
+        .btn.disabled;
+    }
+}
+.btn.disabled {
+    cursor: default;
+    border-color: @btn-disabled-border !important;
+    background: @btn-disabled !important;
+    color: @btn-disabled-text !important;
+}
+.btn.gray {
+    color: #333;
+    background: @btn-gray;
+    border-color: @btn-gray-border;
+    &:hover {
+        background: @btn-gray-hover;
+    }
+    &:active {
+        background: @btn-gray-active;
+    }
+}
+.btn.blue {
+    color: #fff;
+    background: @btn-blue-normal;
+    border-color: @btn-blue-normal;
+    &:hover {
+        background: @btn-blue-hover;
+    }
+}
+.btn.light {
+    background: #afc8e2;
+    border: 1px solid #afc8e2;
+    &:hover {
+        .btn.blue;
+    }
+}
+.btn.red {
+    background-color: @btn-red;
+    border: 1px solid @btn-red;
+    &:hover {
+        background-color: @btn-red-hover;
+    }
+}
+.btn.primary {
+    .btn.blue;
+}
+.btn.cancel {
+    color: #82b6f4;
+    background-color: #fff;
+    border-color: #5d9be3;
+    &:hover {
+        border-color: @blue;
+        background: -webkit-linear-gradient(top, #f0f0f0, #fff);
+    }
+}
+.btn.dismiss {
+    .btn.red;
+}
+.btn.delete {
+    color: #f48282;
+    background-color: #fff;
+    border-color: #f48282;
+    &:hover, &:active{
+        color: #d97373;
+        border-color: #f69595;
+    }
+}

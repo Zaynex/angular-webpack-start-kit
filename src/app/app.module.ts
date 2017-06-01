@@ -1,21 +1,31 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule }  from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import {DialogDemoComponent} from './demo/dialog.demo';
-
+import { Dialog, DialogOverlay, DialogAlert, DialogPrompt } from './../lib/dialog';
+import { Defer } from './../lib/services/promise';
+import { DialogDemoComponent } from './demo/dialog.demo';
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot([{
-      path: 'dialog',
-      component: DialogDemoComponent 
-    }])
+    FormsModule
   ],
   declarations: [
     AppComponent,
+    DialogOverlay,
+    DialogAlert,
+    DialogPrompt,
     DialogDemoComponent
   ],
-  bootstrap: [ AppComponent ]
+  providers:[
+    Dialog,
+    Defer
+  ],
+  bootstrap: [ AppComponent ],
+  entryComponents: [
+    DialogOverlay,
+    DialogAlert,
+    DialogPrompt
+  ]
 })
 export class AppModule { }

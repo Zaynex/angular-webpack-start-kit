@@ -1,0 +1,98 @@
+.widget-dialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: block;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.3);
+    .widget-dialog-container {
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        min-width: 300px;
+        z-index: 10001;
+        border-radius: 2px;
+        border: 1px solid #e0e1e5;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    }
+    .widget-dialog-header {
+        position: relative;
+        border-radius: 2px 2px 0px 0px;
+        color: #595959;
+        font-size: 14px;
+        height: 20px;
+        line-height: 20px;
+        margin: 25px 0;
+        text-align: center;
+        box-sizing: border-box;
+        .ellipsis {
+            overflow:hidden;
+            white-space:nowrap;
+            text-overflow:ellipsis;
+        }
+        .dialog-close {
+            cursor: pointer;
+            display: block;
+            position: absolute;
+            right: 30px;
+            top: 0;
+        }
+        .full-screen {
+            cursor: pointer;
+            display: block;
+            position: absolute;
+            right: 40px;
+            top: 0;
+        }
+    }
+    .widget-dialog-body {
+        line-height:28px;
+        position:relative;
+        p, span {
+          -webkit-user-select:text;
+          cursor: text;
+        }
+        .confirm,.alert {
+            padding: 0 30px;
+            line-height: 20px;
+            max-height: 200px;
+            color: #595959;
+            word-break: break-all;
+        }
+        .prompt input[type=text]{
+            width: 240px;
+            margin: 15px 30px;
+        }
+    }
+    .widget-dialog-footer {
+        padding: 20px 30px 30px;
+        border-radius: 0 0 2px 2px;
+        .btn {
+            margin-left:20px;
+            padding: 0 20px;
+            height: 34px;
+            min-width: 82px;
+            border-radius: 3px;
+        }
+    }
+    &.no-footer {
+        .widget-dialog-body {
+            border-radius: 0px 0px 2px 2px;
+        }
+    }
+}
+
+.widget-dialog-mask {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background: #666;
+}

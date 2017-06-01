@@ -1,0 +1,23 @@
+<div class="widget-dialog" [ngClass]="cls" [style.visibility]="visibility">
+    <div class="widget-dialog-container" [style.width]="width">
+        <div class="widget-dialog-header" [style.width]="width">
+            <span class="title ellipsis">{{title}}</span>
+            <svg class="dialog-close svg_dialog_close" (click)="close()">
+                <use class="default" xlink:href="icons.svg#dialog_close"/>
+                <use class="hover" xlink:href="icons.svg#dialog_close_hover"/>
+            </svg>
+        </div>
+        <div class="widget-dialog-body" #DialogInBody [style.width]="width" [style.height]="height">
+        </div>
+        <div class="widget-dialog-footer" *ngIf="!hideFooter" [style.textAlign]="buttonAlign"
+            [style.display]=" (btns && btns.length > 0) ? 'block' : 'none'">
+            <button *ngFor="let btn of btns"
+                    class="btn"
+                    [ngClass]="btn.cssClass"
+                    (click)="onClick(btn, $event)"
+                    [disabled]="btn.disabled">
+                    {{btn.text}}
+            </button>
+        </div>
+    </div>
+</div>

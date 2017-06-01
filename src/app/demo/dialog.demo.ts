@@ -5,5 +5,4 @@ import { Component } from '@angular/core';
     templateUrl: 'dialog.demo.html'
 })
 export class DialogDemoComponent{
-    
 }
