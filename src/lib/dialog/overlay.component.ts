@@ -61,7 +61,7 @@ export class DialogOverlay implements OnInit {
         // if (this.compileConfig.inputs) {_.extend(cmpRef.instance, this.compileConfig.inputs, {overlay: this});
         // }
         
-        // 给实例(DialogAlert)增加 inputs对象和 overlay，这里的this表示当前类 DialogOverlay
+        // 给实例(比如DialogAlert)增加 inputs对象和 overlay，这里的this表示当前类 DialogOverlay
         _.extend(cmpRef.instance, this.compileConfig.inputs, {overlay: this});
 
         this.bvRef.element.nativeElement.appendChild(cmpRef.location.nativeElement);
